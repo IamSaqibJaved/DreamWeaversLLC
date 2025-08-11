@@ -205,9 +205,9 @@ export default function Services() {
             const Icon = service.icon;
             return (
               <div key={index} className="group [perspective:1000px]">
-                <div className="relative h-64 w-full rounded-2xl border border-gray-200 bg-white shadow-sm transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                <div className="relative h-64 w-full rounded-2xl border border-gray-200 bg-white shadow-sm transition-transform duration-500 [transform-style:preserve-3d] will-change-transform group-hover:[transform:rotateY(180deg)]">
                   {/* Front */}
-                  <div className="absolute inset-0 p-6 backface-hidden">
+                  <div className="absolute inset-0 p-6 backface-hidden [backface-visibility:hidden] z-10">
                     <div className="h-12 w-12 grid place-items-center rounded-xl bg-[#83b4cc]/10">
                       <Icon />
                     </div>
@@ -219,7 +219,7 @@ export default function Services() {
                     </p>
                   </div>
                   {/* Back */}
-                  <div className="absolute inset-0 p-6 rotate-y-180 backface-hidden [transform:rotateY(180deg)]">
+                  <div className="absolute inset-0 p-6 rotate-y-180 backface-hidden [backface-visibility:hidden] z-20 [transform:rotateY(180deg)]">
                     <h4 className="text-sm font-semibold text-gray-900" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                       What you get
                     </h4>
